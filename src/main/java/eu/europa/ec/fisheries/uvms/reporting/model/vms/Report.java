@@ -35,6 +35,8 @@ public class Report {
     private String desc;
     @JsonProperty("visibility")
     private String visibility;
+    @JsonProperty("reportType")
+    private String reportType;
     @JsonProperty("createdOn")
     private String createdOn;
     @JsonProperty("executedOn")
