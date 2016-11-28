@@ -6,7 +6,7 @@
     <artifactId>reporting-model</artifactId>
     <name>reporting-model</name>
     <packaging>ejb</packaging>
-    <version>0.5.5</version>
+    <version>0.5.6-SNAPSHOT</version>
     <description>This module shall have interfaces, XSD, and DTOs</description>
 
     <properties>
@@ -110,7 +110,7 @@
 		 <connection>scm:git:https://emserveje@webgate.ec.europa.eu/CITnet/stash/scm/unionvms/uvms-reportingmodule-model.git</connection>
 		 <developerConnection>scm:git:https://emserveje@webgate.ec.europa.eu/CITnet/stash/scm/unionvms/uvms-reportingmodule-model.git</developerConnection>
 		 <url>https://emserveje@webgate.ec.europa.eu/CITnet/stash/scm/unionvms/</url>
-	  <tag>reporting-model-0.5.5</tag>
+	  <tag>HEAD</tag>
   </scm>
 
     <profiles>
