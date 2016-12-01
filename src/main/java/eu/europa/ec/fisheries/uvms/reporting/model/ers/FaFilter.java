@@ -24,85 +24,75 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class FaFilter {
 
-    @JsonProperty("reportType")
-    private String reportType;
+    @JsonProperty("reportTypes")
+    private List<String> reportTypes;
 
-    @JsonProperty("activityType")
-    private String activityType;
+    @JsonProperty("activityTypes")
+    private List<String> activityTypes;
 
-    @JsonProperty("master")
-    private String master;
+    @JsonProperty("masters")
+    private List<String> masters;
 
-    @JsonProperty("port")
-    private FaPort faPort;
+    @JsonProperty("ports")
+    private List<String> faPorts;
 
-    @JsonProperty("gear")
-    private FaGear faGear;
-
-    @JsonProperty("weight")
-    private FaWeight faWeight;
+    @JsonProperty("gears")
+    private List<String> faGears;
 
     @JsonProperty("species")
     private List<String> species;
 
-    @JsonProperty("reportType")
-    public String getReportType() {
-        return reportType;
-    }
-
-    @JsonProperty("reportType")
-    public void setReportType(String reportType) {
-        this.reportType = reportType;
-    }
-
-    @JsonProperty("activityType")
-    public String getActivityType() {
-        return activityType;
-    }
-
-    @JsonProperty("activityType")
-    public void setActivityType(String activityType) {
-        this.activityType = activityType;
-    }
-
-    @JsonProperty("master")
-    public String getMaster() {
-        return master;
-    }
-
-    @JsonProperty("master")
-    public void setMaster(String master) {
-        this.master = master;
-    }
-
-    @JsonProperty("port")
-    public FaPort getFaPort() {
-        return faPort;
-    }
-
-    @JsonProperty("port")
-    public void setFaPort(FaPort faPort) {
-        this.faPort = faPort;
-    }
-
-    @JsonProperty("gear")
-    public FaGear getFaGear() {
-        return faGear;
-    }
-
-    @JsonProperty("gear")
-    public void setFaGear(FaGear faGear) {
-        this.faGear = faGear;
-    }
-
     @JsonProperty("weight")
-    public FaWeight getFaWeight() {
-        return faWeight;
+    private FaWeight faWeight;
+
+    @JsonProperty("reportTypes")
+    public List<String> getReportTypes() {
+        return reportTypes;
     }
 
-    @JsonProperty("weight")
-    public void setFaWeight(FaWeight faWeight) {
-        this.faWeight = faWeight;
+    @JsonProperty("reportTypes")
+    public void setReportTypes(List<String> reportTypes) {
+        this.reportTypes = reportTypes;
+    }
+
+    @JsonProperty("activityTypes")
+    public List<String> getActivityTypes() {
+        return activityTypes;
+    }
+
+    @JsonProperty("activityTypes")
+    public void setActivityTypes(List<String> activityTypes) {
+        this.activityTypes = activityTypes;
+    }
+
+    @JsonProperty("masters")
+    public List<String> getMasters() {
+        return masters;
+    }
+
+    @JsonProperty("masters")
+    public void setMasters(List<String> masters) {
+        this.masters = masters;
+    }
+
+    @JsonProperty("ports")
+    public List<String> getFaPorts() {
+        return faPorts;
+    }
+
+    @JsonProperty("ports")
+    public void setFaPorts(List<String> faPorts) {
+        this.faPorts = faPorts;
+    }
+
+    @JsonProperty("gears")
+    public List<String> getFaGears() {
+        return faGears;
+    }
+
+    @JsonProperty("gears")
+    public void setFaGears(List<String> faGears) {
+        this.faGears = faGears;
     }
 
     @JsonProperty("species")
@@ -113,5 +103,15 @@ public class FaFilter {
     @JsonProperty("species")
     public void setSpecies(List<String> species) {
         this.species = species;
+    }
+
+    @JsonProperty("weight")
+    public FaWeight getFaWeight() {
+        return faWeight;
+    }
+
+    @JsonProperty("weight")
+    public void setFaWeight(FaWeight faWeight) {
+        this.faWeight = faWeight;
     }
 }
