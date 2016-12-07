@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import eu.europa.ec.fisheries.uvms.reporting.model.ers.FaFilter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,6 +40,10 @@ public class FilterExpression {
     @JsonProperty("assets")
     @Valid
     private List<Asset> assets = new ArrayList<Asset>();
+
+    @JsonProperty("fa")
+    private FaFilter faFilter;
+
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -163,6 +168,16 @@ public class FilterExpression {
         return this;
     }
 
+    @JsonProperty("fa")
+    public FaFilter getFaFilter() {
+        return faFilter;
+    }
+
+    @JsonProperty("fa")
+    public void setFaFilter(FaFilter faFilter) {
+        this.faFilter = faFilter;
+    }
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
@@ -185,7 +200,7 @@ public class FilterExpression {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(common).append(vms).append(areas).append(assets).append(additionalProperties).toHashCode();
+        return new HashCodeBuilder().append(common).append(vms).append(areas).append(assets).append(faFilter).append(additionalProperties).toHashCode();
     }
 
     @Override
@@ -197,7 +212,7 @@ public class FilterExpression {
             return false;
         }
         FilterExpression rhs = ((FilterExpression) other);
-        return new EqualsBuilder().append(common, rhs.common).append(vms, rhs.vms).append(areas, rhs.areas).append(assets, rhs.assets).append(additionalProperties, rhs.additionalProperties).isEquals();
+        return new EqualsBuilder().append(common, rhs.common).append(vms, rhs.vms).append(areas, rhs.areas).append(assets, rhs.assets).append(faFilter, rhs.faFilter).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 
 }
