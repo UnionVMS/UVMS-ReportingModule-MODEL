@@ -6,7 +6,7 @@
     <artifactId>reporting-model</artifactId>
     <name>reporting-model</name>
     <packaging>ejb</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <description>This module shall have interfaces, XSD, and DTOs</description>
 
     <properties>
@@ -27,7 +27,7 @@
 
     <scm>
         <connection>${scm.connection}</connection>
-        <tag>reporting-model-1.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
