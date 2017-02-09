@@ -13,14 +13,10 @@
 
 package eu.europa.ec.fisheries.uvms.reporting.model;
 
-/**
- * Created by padhyad on 11/21/2016.
- */
 public enum ReportTypeEnum {
 
-    ALL("all"),
-    VMS_POSITIONS("vms_positions"),
-    ERS_TRIPS("ers_trips");
+    STANDARD("standard"),
+    SUMMARY("summary");
 
     private String type;
 

@@ -16,9 +16,6 @@ package eu.europa.ec.fisheries.uvms.reporting.model.ers;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * Created by padhyad on 11/16/2016.
- */
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class FaWeight {
 
