@@ -13,6 +13,7 @@ package eu.europa.ec.fisheries.uvms.reporting.model.mappper;
 import eu.europa.ec.fisheries.uvms.reporting.model.exception.ReportingModelException;
 import eu.europa.ec.fisheries.uvms.reporting.model.schemas.ReportGetStartAndEndDateRQ;
 import eu.europa.ec.fisheries.uvms.reporting.model.schemas.ReportingModuleMethod;
+import eu.europa.ec.fisheries.uvms.reporting.model.util.JAXBMarshaller;
 
 /**
  * Created by padhyad on 3/18/2016.
