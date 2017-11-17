@@ -14,7 +14,7 @@
     <artifactId>reporting-model</artifactId>
     <name>reporting-model</name>
     <packaging>ejb</packaging>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.4</version>
     <description>This module shall have interfaces, XSD, and DTOs</description>
 
     <properties>
@@ -35,7 +35,7 @@
 
     <scm>
         <connection>${scm.connection}</connection>
-        <tag>HEAD</tag>
+        <tag>reporting-model-1.0.4</tag>
     </scm>
 
 
