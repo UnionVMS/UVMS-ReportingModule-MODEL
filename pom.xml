@@ -7,7 +7,7 @@
 		<groupId>fish.focus.uvms.maven</groupId>
 		<artifactId>uvms-pom</artifactId>
 		<relativePath />
-		<version>1.14</version>
+		<version>1.18</version>
 	</parent>
     
     <groupId>eu.europa.ec.fisheries.uvms.reporting</groupId>
@@ -206,9 +206,7 @@
                                     <version>1.0.0</version>
                                 </plugin>
                             </plugins>
-
                         </configuration>
-
                     </plugin>
                 </plugins>
             </build>
