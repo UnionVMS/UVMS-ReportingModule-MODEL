@@ -120,6 +120,11 @@
             <artifactId>logback-core</artifactId>
             <version>${logback.core.version}</version>
         </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.fisheries.uvms.commons</groupId>
+            <artifactId>uvms-commons-xml</artifactId>
+            <version>${uvms.commonsLibrary.version}</version>
+        </dependency>
 
     </dependencies>
 

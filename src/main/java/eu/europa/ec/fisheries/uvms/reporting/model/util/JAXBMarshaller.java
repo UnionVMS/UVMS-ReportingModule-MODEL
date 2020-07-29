@@ -10,24 +10,21 @@ details. You should have received a copy of the GNU General Public License along
  */
 package eu.europa.ec.fisheries.uvms.reporting.model.util;
 
+import eu.europa.ec.fisheries.uvms.commons.xml.AbstractJAXBMarshaller;
+import eu.europa.ec.fisheries.uvms.commons.xml.JAXBRuntimeException;
 import eu.europa.ec.fisheries.uvms.reporting.model.exception.ReportingModelException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.jms.JMSException;
 import javax.jms.TextMessage;
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import java.io.StringReader;
-import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
 
-public final class JAXBMarshaller {
+public final class JAXBMarshaller extends AbstractJAXBMarshaller {
 
-    final static Logger LOG = LoggerFactory.getLogger(JAXBMarshaller.class);
-
-    private JAXBMarshaller() {}
+    private JAXBMarshaller() {
+    }
 
     /**
      * Marshalls a JAXB Object to a XML String representation
@@ -39,14 +36,11 @@ public final class JAXBMarshaller {
      */
     public static <T> String marshall(T data) throws ReportingModelException {
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(new Class[]{data.getClass()});
-            Marshaller marshaller = jaxbContext.createMarshaller();
-            marshaller.setProperty("jaxb.formatted.output", Boolean.TRUE);
-            StringWriter sw = new StringWriter();
-            marshaller.marshal(data, sw);
-            return sw.toString();
-        } catch (JAXBException e) {
-            throw new ReportingModelException("Error when marshalling " , e);
+            Map<String,Object> properties = new HashMap<>();
+            properties.put(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            return marshallToString(data, properties);
+        } catch (JAXBException | JAXBRuntimeException e) {
+            throw new ReportingModelException("Error when marshalling ", e);
         }
     }
 
@@ -60,13 +54,10 @@ public final class JAXBMarshaller {
      * @return
      * @throws ReportingModelException
      */
-    public static <R> R unmarshall(TextMessage textMessage, Class clazz) throws ReportingModelException {
+    public static <R> R unmarshall(TextMessage textMessage, Class<R> clazz) throws ReportingModelException {
         try {
-            JAXBContext jc = JAXBContext.newInstance(new Class[]{clazz});
-            Unmarshaller unmarshaller = jc.createUnmarshaller();
-            StringReader sr = new StringReader(textMessage.getText());
-            return (R) unmarshaller.unmarshal(sr);
-        } catch (JMSException | JAXBException e) {
+            return unmarshallTo(textMessage, clazz);
+        } catch (JMSException | JAXBException | JAXBRuntimeException e) {
             throw new ReportingModelException("Error when unmarshalling response in ResponseMapper: ", e);
         }
     }
