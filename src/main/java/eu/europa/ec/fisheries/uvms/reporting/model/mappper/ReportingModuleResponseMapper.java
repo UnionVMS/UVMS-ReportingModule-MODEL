@@ -51,8 +51,7 @@ public class ReportingModuleResponseMapper {
             }
 
         } catch (JMSException e) {
-            LOG.error("JMS exception during validation ", e);
-            throw new ReportingModelException("JMS exception during validation " + e.getMessage());
+            throw new ReportingModelException("JMS exception during validation " , e);
         }
     }
 
@@ -61,7 +60,7 @@ public class ReportingModuleResponseMapper {
             validateResponse(response, correlationId);
             return JAXBMarshaller.unmarshall(response, ReportGetStartAndEndDateRS.class);
         } catch (ReportingModelException e) {
-            throw new ReportingModelException(e);
+            throw new ReportingModelException("Could not unmarshall response: " ,e);
         }
     }
 
